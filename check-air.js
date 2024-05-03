@@ -5,20 +5,39 @@ The second argument is a number representing the highest acceptable amount of di
 */
 
 const checkAir = function (samples, threshold) {
-  // Code here!
+  let airQuality = "";
+  let count = 0;
+  
+  for (let sample of samples) {
+    if (sample === "dirty") {
+      count = count + 1;
+    }
+  }
+
+  let result = count / samples.length;
+  
+  if (result > threshold) {
+    
+    airQuality = "Polluted";
+  } else {
+    airQuality = "Clean";
+  }
+
+  return airQuality;
+ 
 };
 
 console.log(checkAir(
   ['clean', 'clean', 'dirty', 'clean', 'dirty', 'clean', 'clean', 'dirty', 'clean', 'dirty'],
   0.3
-));
+));//Polluted
 
 console.log(checkAir(
   ['dirty', 'dirty', 'dirty', 'dirty', 'clean'],
   0.25
-));
+));//Polluted
 
 console.log(checkAir(
   ['clean', 'dirty', 'clean', 'dirty', 'clean', 'dirty', 'clean'],
   0.9
-))
+)) //Clean
