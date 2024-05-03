@@ -14,9 +14,10 @@ const repeatNumbers = function (data) {
       repeated = repeated + elements[0];
     }
     repeatedContainer.push(repeated);
+    repeated = "";
   }
 
-  return repeatedContainer.toString();
+  return repeatedContainer.join(", "); //the array.join function takes an optional delimiter parameter which will seperate the elements by the delimiter. 
 };
 
 console.log(repeatNumbers([[1, 10]]));
@@ -26,10 +27,10 @@ console.log(
     [2, 3],
   ])
 );
-// console.log(
-//   repeatNumbers([
-//     [10, 4],
-//     [34, 6],
-//     [92, 2],
-//   ])
-// );
+console.log(
+  repeatNumbers([
+    [10, 4],
+    [34, 6],
+    [92, 2],
+  ])
+);
