@@ -20,17 +20,17 @@ const repeatNumbers = function (data) {
   return repeatedContainer.join(", "); //the array.join function takes an optional delimiter parameter which will seperate the elements by the delimiter. 
 };
 
-console.log(repeatNumbers([[1, 10]]));
+console.log(repeatNumbers([[1, 10]])); //1111111111
 console.log(
   repeatNumbers([
     [1, 2],
     [2, 3],
   ])
-);
+); // 11, 222
 console.log(
   repeatNumbers([
     [10, 4],
     [34, 6],
     [92, 2],
   ])
-);
+); //10101010, 343434343434, 9292
